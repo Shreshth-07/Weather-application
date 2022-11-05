@@ -37,73 +37,90 @@ const getWeather = async(city)=>
         climate.textContent=main;
         tempvalue.textContent=Math.round(feels_like+0);
 
-                    if(id<300 && id>200)
-                    {
-                        if(hour >= 4 && hour <= 20)
-                        {
-                            tempicon.src="./icons/thunderstrom-icon.svg"
-                        }
-                        else
-                        {
-                            tempicon.src="./icons/night-rain-lightning-icon.svg"
-                        }
-                    }
-                    else if(id<400 && id>300)
-                    {
-                        if(hour >=4 && hour <= 20)
-                        {
-                            tempicon.src="./icons/cloud-icon.svg"
-                        }
-                        else
-                        {
-                            tempicon.src="./icons/night-cloud-icon.svg"
-                        }
-                    }
-                    else if(id<600 && id>500)
-                    {
-                        if(hour >= 4 && hour <=20)
-                        {
-                            tempicon.src="./icons/rain-icon.svg"
-                        }
-                        else
-                        {
-                            tempicon.src="./icons/night-rain-icon.svg"
-                        }
-                    }
-                    else if(id<700 && id>600)
-                    {
-                        if(hour >= 4 && hour <= 20)
-                        {
-                            tempicon.src="./icons/snow-icon.svg"
-                        }
-                        else
-                        {
-                            tempicon.src="./icons/snowman-icon.svg"
-                        }
-                    }
-                    else if(id<800 && id>700)
-                    {
-                        if(hour >= 4 && hour <= 20)
-                        {
-                            tempicon.src="./icons/cloud-sun-icon.svg"
-                        }
-                        else
-                        {
-                            tempicon.src="./icons/night-cloud-icon.svg"
-                        }
-                    }
-                    else if(id==800)
-                    {
-                        
-                        if(hour >= 4 && hour <= 20)
-                        {
-                            tempicon.src="./icons/sun-icon.svg"
-                        }
-                        else
-                        {
-                            tempicon.src="./icons/night-icon.svg" 
-                        }
-                    }
+        if(id<300 && id>200)
+        {
+            if(hour >= 4 && hour <= 20)
+            {
+                tempicon.src="./icons/thunderstrom-icon.svg"
+            }
+            else
+            {
+                tempicon.src="./icons/night-rain-lightning-icon.svg"
+            }
+        }
+        else if(id<400 && id>300)
+        {
+            if(hour >= 4 && hour <= 20)
+            {
+                tempicon.src="./icons/cloud-icon.svg"
+            }
+            else
+            {
+                tempicon.src="./icons/night-cloud-icon.svg"
+            }
+        }
+        else if(id<600 && id>500)
+        {
+            if(hour >= 4 && hour <= 20)
+            {
+                tempicon.src="./icons/rain-icon.svg"
+            }
+            else
+            {
+                tempicon.src="./icons/night-rain-icon.svg"
+            }
+        }
+        else if(id<700 && id>600)
+        {
+            if(hour >= 4 && hour <= 20)
+            {
+                tempicon.src="./icons/snow-icon.svg"
+            }
+            else
+            {
+                tempicon.src="./icons/snowman-icon.svg"
+            }
+        }
+        else if(id<800 && id>700)
+        {
+            if(hour >= 4 && hour <= 20)
+            {
+                tempicon.src="./icons/day-cloud-fog-icon.svg"
+            }
+            else
+            {
+                tempicon.src="./icons/night-cloud-fog-icon.svg"
+            }
+        }
+        else if(id==741 && id == 701)
+        {
+            
+            {
+                tempicon.src="./icons/clous-fog-icon.svg"
+            }
+        }
+        else if(id==800)
+        {
+            if(hour >= 4 && hour < 20)
+            {
+                tempicon.src="./icons/sun-icon.svg"
+            }
+            else
+            {
+                tempicon.src="./icons/night-icon.svg" 
+            }
+        }
+        else if(id<900 && id>800)
+        {
+            if(hour >= 4 && hour <= 20)
+            {
+                tempicon.src="./icons/cloud-sun-icon.svg"
+            }
+            else
+            {
+                tempicon.src="./icons/night-cloud-icon.svg"
+            }
+        }
 
                     
 
@@ -190,11 +207,18 @@ window.addEventListener("load" ,()=>
                     {
                         if(hour >= 4 && hour <= 20)
                         {
-                            tempicon.src="./icons/cloud-sun-icon.svg"
+                            tempicon.src="./icons/day-cloud-fog-icon.svg"
                         }
                         else
                         {
-                            tempicon.src="./icons/night-cloud-icon.svg"
+                            tempicon.src="./icons/night-cloud-fog-icon.svg"
+                        }
+                    }
+                    else if(id==741 && id == 701)
+                    {
+                        
+                        {
+                            tempicon.src="./icons/clous-fog-icon.svg"
                         }
                     }
                     else if(id==800)
@@ -206,6 +230,17 @@ window.addEventListener("load" ,()=>
                         else
                         {
                             tempicon.src="./icons/night-icon.svg" 
+                        }
+                    }
+                    else if(id<900 && id>800)
+                    {
+                        if(hour >= 4 && hour <= 20)
+                        {
+                            tempicon.src="./icons/cloud-sun-icon.svg"
+                        }
+                        else
+                        {
+                            tempicon.src="./icons/night-cloud-icon.svg"
                         }
                     }
 
