@@ -4,20 +4,23 @@
     <head>
         <title>Weather App</title>
         <link rel ="stylesheet" href ="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
     </head>
     <body>
 
-        <form id="search-form">
-            <input type="search" placeholder="Enter City Name"
-            id="search-input"
-            required
-            autocomplete="off"/>
-            <br>
-            <button id="search-button">Search</button>
-        </form>
-
+        <style>
+            h1{text-align: center;}
+        </style>
         <main id="app-container">
+            <h1 style="color: #ffffff;"><u>WEATHER REPORT</u></h1>
+            <form id="search-form">
+                <input type="search" placeholder="Enter City Name"
+                id="search-input"
+                required
+                autocomplete="off"/>
+                <br>
+                <button id="search-button">Search</button>
+            </form>
             <div id="location">
                 <p>-----------</p>
             </div>
