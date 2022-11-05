@@ -14,8 +14,6 @@ body{
     justify-self: center;
     align-items: center;
     margin-top: 100px;
-    margin-left: 41%;
-    margin-right: 59%;
 }
 #temp
 {
@@ -72,20 +70,7 @@ main
     box-shadow: 10px 10px 15px 15px rgb(28, 28, 61);
 }
 
-#search-input
-{
-    width: 400px;
-    height: 30px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    font-weight: lighter;
-    padding-left: 20px;
-    border: none;
-    border: 1px solid rgb(71, 71, 71);
-}
-
-#date
+ #date
 {
     text-align: center;
     margin-top: 0.2rem;
@@ -97,28 +82,43 @@ main
     text-transform: uppercase;
 }
 
-#search-button:hover
+#search-button
 {
-    color: #fff;
-    background: #ff6768;
-    border-color: black;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: teal;
+    border-radius: 5px;
+    margin-left: 5px;
+    padding: 11px;
+    border: black;
+    display: inline-block;
     transition: all 0.3s ease 0s;
 }
 
-#search-button
+#search-button:hover
 {
-    width: 70px;
-    height: 30px;
-    margin-top: 13px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    padding: 3px 10px;
-    border-radius: 15px;
-    font-weight: 700;
-    background-color: rgb(0, 117, 117);
-    color: white;
+    color: #494949;
+    background: #ff6768;
+    border-color: white;
+    transition: all 0.3s ease 0s;
 }
- input
- {
-    border: none;  
- }
+
+#search-input
+{
+    width: 15rem;
+    overflow: hidden;
+    font-size: 20px;
+    margin: 8px 0;
+    padding: 8px 0;
+    border-bottom: 3px solid #ff6768;
+    color: white;
+    outline: none;
+    background: none;
+    margin-left: 580px;
+}
+
+input
+{
+   border: none;  
+}
