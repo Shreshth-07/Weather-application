@@ -22,18 +22,25 @@
                 <button id="search-button">Search</button>
             </form>
             <div id="location">
-                <p>-----------</p>
+                <p><span id="state">-------</span><span id="coun">---</span></p>
             </div>
             <div id="temp">
                 <img id="temp-icon" src="./icons/sun-icon.svg" alt="">
                 <p><span id="temp-value">------</span>
-                <span id="temp-unit">&#176c</span></p>
+                <span id="temp-unit">°C</span></p>
             </div>
             <div id="climate">
                 <p>-----------</p>
             </div>
             <div id="date"> SAT | OCT | 12:20</div>
+            <hr>
+            <hr>
+            <div id="humi">Humidity: ------</div>
+            <div id="wind">Wind speed: ------</div>
+            <div id="sunrise">Sun-Rise: ------</div>
+            <div id="sunset">Sun-Set: ------</div>
         </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="script.js">
         </script>
         <script>
