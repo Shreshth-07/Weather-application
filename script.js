@@ -6,7 +6,13 @@ let iconfile;
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const now = new Date();
-const hour = now.getHours();
+var hour = now.getHours();
+var min = now.getMinutes();
+var ampm = hour>=12 ? "PM" : "AM";
+//hour = hour%12;
+//hour = hour ? hour : 12;
+min = min<10 ? '0'+min : min;
+             
 
 searchButton.addEventListener('click',(e)=>
 {
@@ -33,7 +39,7 @@ const getWeather = async(city)=>
 
                     if(id<300 && id>200)
                     {
-                        if(hour > 8 && hour < 4)
+                        if(hour >= 4 && hour <= 20)
                         {
                             tempicon.src="./icons/thunderstrom-icon.svg"
                         }
@@ -44,7 +50,7 @@ const getWeather = async(city)=>
                     }
                     else if(id<400 && id>300)
                     {
-                        if(hour > 8 && hour < 4)
+                        if(hour >=4 && hour <= 20)
                         {
                             tempicon.src="./icons/cloud-icon.svg"
                         }
@@ -55,7 +61,7 @@ const getWeather = async(city)=>
                     }
                     else if(id<600 && id>500)
                     {
-                        if(hour > 8 && hour < 4)
+                        if(hour >= 4 && hour <=20)
                         {
                             tempicon.src="./icons/rain-icon.svg"
                         }
@@ -66,7 +72,7 @@ const getWeather = async(city)=>
                     }
                     else if(id<700 && id>600)
                     {
-                        if(hour > 8 && hour < 4)
+                        if(hour >= 4 && hour <= 20)
                         {
                             tempicon.src="./icons/snow-icon.svg"
                         }
@@ -77,7 +83,7 @@ const getWeather = async(city)=>
                     }
                     else if(id<800 && id>700)
                     {
-                        if(hour > 8 && hour < 4)
+                        if(hour >= 4 && hour <= 20)
                         {
                             tempicon.src="./icons/cloud-sun-icon.svg"
                         }
@@ -88,7 +94,8 @@ const getWeather = async(city)=>
                     }
                     else if(id==800)
                     {
-                        if(hour > 8 && hour < 4)
+                        
+                        if(hour >= 4 && hour <= 20)
                         {
                             tempicon.src="./icons/sun-icon.svg"
                         }
@@ -97,6 +104,8 @@ const getWeather = async(city)=>
                             tempicon.src="./icons/night-icon.svg" 
                         }
                     }
+
+                    
 
     }
     catch(error)
@@ -135,7 +144,7 @@ window.addEventListener("load" ,()=>
 
                     if(id<300 && id>200)
                     {
-                        if(hour > 8 && hour < 4)
+                        if(hour >= 4 && hour <= 20)
                         {
                             tempicon.src="./icons/thunderstrom-icon.svg"
                         }
@@ -146,7 +155,7 @@ window.addEventListener("load" ,()=>
                     }
                     else if(id<400 && id>300)
                     {
-                        if(hour > 8 && hour < 4)
+                        if(hour >= 4 && hour <= 20)
                         {
                             tempicon.src="./icons/cloud-icon.svg"
                         }
@@ -157,7 +166,7 @@ window.addEventListener("load" ,()=>
                     }
                     else if(id<600 && id>500)
                     {
-                        if(hour > 8 && hour < 4)
+                        if(hour >= 4 && hour <= 20)
                         {
                             tempicon.src="./icons/rain-icon.svg"
                         }
@@ -168,7 +177,7 @@ window.addEventListener("load" ,()=>
                     }
                     else if(id<700 && id>600)
                     {
-                        if(hour > 8 && hour < 4)
+                        if(hour >= 4 && hour <= 20)
                         {
                             tempicon.src="./icons/snow-icon.svg"
                         }
@@ -179,7 +188,7 @@ window.addEventListener("load" ,()=>
                     }
                     else if(id<800 && id>700)
                     {
-                        if(hour > 8 && hour < 4)
+                        if(hour >= 4 && hour <= 20)
                         {
                             tempicon.src="./icons/cloud-sun-icon.svg"
                         }
@@ -190,7 +199,7 @@ window.addEventListener("load" ,()=>
                     }
                     else if(id==800)
                     {
-                        if(hour > 8 && hour < 4)
+                        if(hour >= 4 && hour < 20)
                         {
                             tempicon.src="./icons/sun-icon.svg"
                         }
