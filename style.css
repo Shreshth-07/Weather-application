@@ -9,6 +9,11 @@ body{
     margin-top: center;
     /*background-color: #263859;*/
     background-image: url('https://source.unsplash.com/1600x900/?landscape');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,7 +143,6 @@ main
     margin-left: 5px;
     
 }
-
 input
 {
    border: none;  
