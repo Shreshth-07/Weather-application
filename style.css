@@ -9,7 +9,7 @@ body{
     margin-top: center;
     /*background-color: #263859;*/
     background-image: url('https://source.unsplash.com/1600x900/?landscape');
-    height: 100%;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
