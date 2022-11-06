@@ -41,13 +41,17 @@ const getWeather = async(city)=>
         const{id,main}=weatherData.weather[0];
         const{humidity}=weatherData.main;
         const{speed}=weatherData.wind;
+        const{sunrise}=weatherData.sys;
+        const{sunset}=weatherData.sys;
 
         loc.textContent = name;
         con.textContent = country;
         climate.textContent=main;
-        tempvalue.textContent = feels_like;
+        tempvalue.textContent =feels_like;
         hum.textContent = "Humidity : "+humidity+"%";
         win.textContent = "Wind Speed : "+speed +" km/h";
+        rise.textContent = "Sun-rise : "+window.moment(weatherData.sys.sunrise*1000).format('hh:mm a');
+        set.textContent = "Sun-set : "+ window.moment(weatherData.sys.sunset*1000).format('hh:mm a');
         
 
         if(id<300 && id>200)
