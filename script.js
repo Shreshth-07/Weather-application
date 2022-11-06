@@ -54,84 +54,94 @@ const getWeather = async(city)=>
         {
             if(hour >= 4 && hour <= 20)
             {
-                tempicon.src="./icons/thunderstrom-icon.svg"
+                tempicon.src="./icons/strom.png"
             }
             else
             {
-                tempicon.src="./icons/night-rain-lightning-icon.svg"
+                tempicon.src="./icons/strom.png"
             }
         }
         else if(id<400 && id>300)
         {
             if(hour >= 4 && hour <= 20)
             {
-                tempicon.src="./icons/cloud-icon.svg"
+                tempicon.src="./icons/rain.png"
             }
             else
             {
-                tempicon.src="./icons/night-cloud-icon.svg"
+                tempicon.src="./icons/rain.png"
             }
         }
         else if(id<600 && id>500)
         {
             if(hour >= 4 && hour <= 20)
             {
-                tempicon.src="./icons/rain-icon.svg"
+                tempicon.src="./icons/rainy-day.png"
             }
             else
             {
-                tempicon.src="./icons/night-rain-icon.svg"
+                tempicon.src="./icons/night-rain.png"
             }
         }
         else if(id<700 && id>600)
         {
             if(hour >= 4 && hour <= 20)
             {
-                tempicon.src="./icons/snow-icon.svg"
+                tempicon.src="./icons/snow.png"
             }
             else
             {
-                tempicon.src="./icons/snowman-icon.svg"
+                tempicon.src="./icons/snow.png"
             }
         }
         else if(id<800 && id>700)
         {
             if(hour >= 4 && hour <= 20)
             {
-                tempicon.src="./icons/day-cloud-fog-icon.svg"
+                tempicon.src="./icons/haze.png"
             }
             else
             {
-                tempicon.src="./icons/night-cloud-fog-icon.svg"
+                tempicon.src="./icons/night-fog.png"
             }
         }
         else if(id==741 && id == 701)
         {
             
             {
-                tempicon.src="./icons/clous-fog-icon.svg"
+                tempicon.src="./icons/fog.png"
             }
         }
         else if(id==800)
         {
             if(hour >= 4 && hour < 20)
             {
-                tempicon.src="./icons/sun-icon.svg"
+                tempicon.src="./icons/sun.png"
             }
             else
             {
-                tempicon.src="./icons/night-icon.svg" 
+                tempicon.src="./icons/moon.png" 
             }
         }
-        else if(id<900 && id>800)
+        else if(id==801)
         {
             if(hour >= 4 && hour <= 20)
             {
-                tempicon.src="./icons/cloud-sun-icon.svg"
+                tempicon.src="./icons/cloudy-day.png"
             }
             else
             {
-                tempicon.src="./icons/night-cloud-icon.svg"
+                tempicon.src="./icons/night-cloud.png"
+            }
+        }else if(id<900 && id>801)
+        {
+            if(hour >= 4 && hour <= 20)
+            {
+                tempicon.src="./icons/clouds.png"
+            }
+            else
+            {
+                tempicon.src="./icons/clouds.png"
             }
         }           
 
@@ -185,84 +195,94 @@ window.addEventListener("load" ,()=>
                     {
                         if(hour >= 4 && hour <= 20)
                         {
-                            tempicon.src="./icons/thunderstrom-icon.svg"
+                            tempicon.src="./icons/strom.png"
                         }
                         else
                         {
-                            tempicon.src="./icons/night-rain-lightning-icon.svg"
+                            tempicon.src="./icons/strom.png"
                         }
                     }
                     else if(id<400 && id>300)
                     {
                         if(hour >= 4 && hour <= 20)
                         {
-                            tempicon.src="./icons/cloud-icon.svg"
+                            tempicon.src="./icons/rain.png"
                         }
                         else
                         {
-                            tempicon.src="./icons/night-cloud-icon.svg"
+                            tempicon.src="./icons/rain.png"
                         }
                     }
                     else if(id<600 && id>500)
                     {
                         if(hour >= 4 && hour <= 20)
                         {
-                            tempicon.src="./icons/rain-icon.svg"
+                            tempicon.src="./icons/rainy-day.png"
                         }
                         else
                         {
-                            tempicon.src="./icons/night-rain-icon.svg"
+                            tempicon.src="./icons/night-rain.png"
                         }
                     }
                     else if(id<700 && id>600)
                     {
                         if(hour >= 4 && hour <= 20)
                         {
-                            tempicon.src="./icons/snow-icon.svg"
+                            tempicon.src="./icons/snow.png"
                         }
                         else
                         {
-                            tempicon.src="./icons/snowman-icon.svg"
+                            tempicon.src="./icons/snow.png"
                         }
                     }
                     else if(id<800 && id>700)
                     {
                         if(hour >= 4 && hour <= 20)
                         {
-                            tempicon.src="./icons/day-cloud-fog-icon.svg"
+                            tempicon.src="./icons/haze.png"
                         }
                         else
                         {
-                            tempicon.src="./icons/night-cloud-fog-icon.svg"
+                            tempicon.src="./icons/night-fog.png"
                         }
                     }
                     else if(id==741 && id == 701)
                     {
                         
                         {
-                            tempicon.src="./icons/clous-fog-icon.svg"
+                            tempicon.src="./icons/fog.png"
                         }
                     }
                     else if(id==800)
                     {
                         if(hour >= 4 && hour < 20)
                         {
-                            tempicon.src="./icons/sun-icon.svg"
+                            tempicon.src="./icons/sun.png"
                         }
                         else
                         {
-                            tempicon.src="./icons/night-icon.svg" 
+                            tempicon.src="./icons/moon.png" 
                         }
                     }
-                    else if(id<900 && id>800)
+                    else if(id==801)
                     {
                         if(hour >= 4 && hour <= 20)
                         {
-                            tempicon.src="./icons/cloud-sun-icon.svg"
+                            tempicon.src="./icons/cloudy-day.png"
                         }
                         else
                         {
-                            tempicon.src="./icons/night-cloud-icon.svg"
+                            tempicon.src="./icons/night-cloud.png"
+                        }
+                    }else if(id<900 && id>801)
+                    {
+                        if(hour >= 4 && hour <= 20)
+                        {
+                            tempicon.src="./icons/clouds.png"
+                        }
+                        else
+                        {
+                            tempicon.src="./icons/clouds.png"
                         }
                     }
 
