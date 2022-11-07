@@ -2,9 +2,17 @@
 <html>
     
     <head>
+        <style>
+            .col-md-4:hover
+            {
+                background-color: rgb(33, 34, 34);
+                box-shadow: 0px 0px 10px rgb(115, 110, 174);
+            }
+        </style>
         <title>Weather App</title>
         <link rel ="stylesheet" href ="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
 
@@ -19,7 +27,7 @@
                 required
                 autocomplete="off"/>
                 <br>
-                <button id="search-button">Search</button>
+                <button id="search-button" onclick="getweather()">Search</button>
             </form>
             <div id="location">
                 <p><span id="state">-------</span><span id="coun">---</span></p>
@@ -34,15 +42,67 @@
             </div>
             <div id="date"> SAT | OCT | 12:20</div>
             <hr>
-            <hr>
             <div id="humi">Humidity: ------</div>
             <div id="wind">Wind speed: ------</div>
             <div id="sunrise">Sun-Rise: ------</div>
             <div id="sunset">Sun-Set: ------</div>
+            <hr>
+            <br>
+            <div id="con">Hourly Report</div>
+            <hr>
+            
+
+            <div class="container">
+                <div class="row">
+                <div class="col-md-12">
+                    <h1 id="city" style="color: #fff;"></h1>
+                </div>
+                <div class="row" id="output" style="color: #fff; font-size: 1rem; text-align: center;"></div>
+                </div>
+    
+            </div>
+            <script>
+
+                function getweather()
+                {
+                    var city = $("#search-input").val();
+                
+
+                $.ajax({
+                    url:"https://api.openweathermap.org/data/2.5/forecast?q="+city+"&mode=json&appid=ba98deab6ce9cd74af9735fb0625c520&units=metric",
+                    type:"get",
+                    success:function(data){
+                        var rs="";
+    
+                        for(i in data.list)
+                        {
+                            rs += "<div class='col-md-4'><div class='alert alert-primary' >"
+
+                            rs += "<i>"+(data.list[i].dt_txt)+"</i>"
+
+                            rs += "<img src='https://openweathermap.org/img/wn/"+data.list[i].weather[0].icon+"@2x.png'/><br/>"
+                            rs += "<b>"+(data.list[i].main.temp+"</b>&deg;C<br/>")
+                            
+                            rs += "<strong><ins>"+(data.list[i].weather[0].main+"</strong><br/>")
+                            rs += "<em>("+(data.list[i].weather[0].description+")</em><br/>")
+                            rs += "</div></div><hr>"
+                        }
+                        $("#output").html(rs)
+                    }
+                })
+
+                }
+            </script>
+
+
         </main>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="script.js">
         </script>
+
+        
+
         <script>
             const curDate = document.getElementById("date");
              const getCurrentDay = () =>{
@@ -89,5 +149,6 @@
 
             curDate.innerHTML =getCurrentDay()+ " | " +getCurrentTime();
         </script>
+        
     </body>
 </html>
