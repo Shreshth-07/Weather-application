@@ -2,18 +2,12 @@
 <html>
     
     <head>
-        <style>
-            .col-md-4:hover
-            {
-                background-color: rgb(33, 34, 34);
-                border-radius: 20px;
-                box-shadow: 0px 0px 10px rgb(115, 110, 174);
-            }
-        </style>
         <title>Weather App</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel ="stylesheet" href ="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     </head>
     <body>
 
@@ -22,13 +16,17 @@
         </style>
         <main id="app-container">
             <h1 style="color: #ffffff;"><u>WEATHER REPORT</u></h1>
+            <!--<div id="btns">
+                <button id="night" onclick="nightFun()">Night</button>
+                <button id="day" onclick="dayFun()">Day</button>
+         </div>-->
             <form id="search-form">
                 <input type="search" placeholder="Enter City Name"
                 id="search-input"
                 required
                 autocomplete="off"/>
                 <br>
-                <button id="search-button" onclick="getweather()">Search</button>
+                <button id="search-button">Search</button>
             </form>
             <div id="location">
                 <p><span id="state">-------</span><span id="coun">---</span></p>
@@ -47,63 +45,45 @@
             <div id="wind">Wind speed: ------</div>
             <div id="sunrise">Sun-Rise: ------</div>
             <div id="sunset">Sun-Set: ------</div>
+  
             <hr>
-            <br>
-            <div id="con">Hourly Report</div>
-            <hr>
-            
-
-            <div class="container">
-                <div class="row">
-                <div class="col-md-12">
-                    <h1 id="city" style="color: #fff;"></h1>
-                </div>
-                <div class="row" id="output" style="color: #fff; font-size: 1rem; text-align: center;"></div>
-                </div>
-    
-            </div>
-            <script>
-
-                function getweather()
-                {
-                    var city = $("#search-input").val();
-                
-
-                $.ajax({
-                    url:"https://api.openweathermap.org/data/2.5/forecast?q="+city+"&mode=json&appid=ba98deab6ce9cd74af9735fb0625c520&units=metric",
-                    type:"get",
-                    success:function(data){
-                        var rs="";
-    
-                        for(i in data.list)
-                        {
-                            rs += "<div class='col-md-4'><div class='alert alert-primary' >"
-
-                            rs += "<i>"+(data.list[i].dt_txt)+"</i>"
-
-                            rs += "<img src='https://openweathermap.org/img/wn/"+data.list[i].weather[0].icon+"@2x.png'/><br/>"
-                            rs += "<b>"+(data.list[i].main.temp+"</b>&deg;C<br/>")
-                            
-                            rs += "<strong><ins>"+(data.list[i].weather[0].main+"</strong><br/>")
-                            rs += "<em>("+(data.list[i].weather[0].description+")</em><br/>")
-                            rs += "</div></div><hr>"
-                        }
-                        $("#output").html(rs)
-                    }
-                })
-
-                }
-            </script>
-
-
+            <div id="days">
+                <div>
+                      <p id="d1">---</p>
+                      <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="i1" />
+                      <div id="tem1">Temp: ---&#176;C</div> 
+                    </div>
+                    <div>
+                      <p id="d2">---</p>
+                      <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="i2" />
+                      <div id="tem2">Temp: ---&#176;C</div>   
+                    </div>
+                    <div>
+                      <p id="d3">---</p>
+                      <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="i3" />
+                      <div id="tem3">Temp: ---&#176;C</div>   
+                    </div>
+                    <div>
+                      <p id="d4">---</p>
+                      <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="i4" />
+                      <div id="tem4">Temp: ---&#176;C</div>   
+                    </div>
+                    <div>
+                      <p id="d5">---</p>
+                      <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="i5" />
+                      <div id="tem5">Temp: ---&#176;C</div>   
+                    </div>
+                    <div>
+                      <p id="d6">---</p>
+                      <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="i6" />
+                      <div id="tem6">Temp: ---&#176;C</div>  
+                    </div>
+                    
+              </div>
         </main>
-        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="script.js">
         </script>
-
-        
-
         <script>
             const curDate = document.getElementById("date");
              const getCurrentDay = () =>{
@@ -150,6 +130,5 @@
 
             curDate.innerHTML =getCurrentDay()+ " | " +getCurrentTime();
         </script>
-        
     </body>
 </html>

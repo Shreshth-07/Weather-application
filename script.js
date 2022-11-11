@@ -2,20 +2,37 @@ let loc = document.getElementById("state");
 let tempicon = document.getElementById("temp-icon");
 let tempvalue = document.getElementById("temp-value");
 let climate = document.getElementById("climate");
+
 let hum =document.getElementById("humi");
 let win = document.getElementById("wind");
 let con = document.getElementById("coun");
 let rise = document.getElementById("sunrise");
 let set = document.getElementById("sunset");
+
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
+
+const tem1 = document.getElementById("tem1");
+const tem2 = document.getElementById("tem2");
+const tem3 = document.getElementById("tem3");
+const tem4 = document.getElementById("tem4");
+const tem5 = document.getElementById("tem5");
+const tem6 = document.getElementById("tem6");
+
+const d1 = document.getElementById("d1");
+const d2 = document.getElementById("d2");
+const d3 = document.getElementById("d3");
+const d4 = document.getElementById("d4");
+const d5 = document.getElementById("d5");
+const d6 = document.getElementById("d6");
+
 const now = new Date();
 var hour = now.getHours();
 var min = now.getMinutes();
 var ampm = hour>=12 ? "PM" : "AM";
 min = min<10 ? '0'+min : min;
-
-             
+let lati;
+let long;
 
 searchButton.addEventListener('click',(e)=>
 {
@@ -53,6 +70,7 @@ const getWeather = async(city)=>
         rise.textContent = "Sun-rise : "+window.moment(weatherData.sys.sunrise*1000).format('hh:mm a');
         set.textContent = "Sun-set : "+ window.moment(weatherData.sys.sunset*1000).format('hh:mm a');
         
+
 
         if(id<300 && id>200)
         {
@@ -147,8 +165,34 @@ const getWeather = async(city)=>
             {
                 tempicon.src="./icons/clouds.png"
             }
-        }           
+        }
+           
+        const key = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${weatherData.coord.lat}&lon=${weatherData.coord.lon}&exclude=,hourly,minutely&units=metric&appid=ba98deab6ce9cd74af9735fb0625c520`);
 
+        const d = await key.json();
+        console.log(d);
+            
+        d1.textContent = window.moment(d.daily[1].dt*1000).format('ddd');
+        d2.textContent = window.moment(d.daily[2].dt*1000).format('ddd');
+        d3.textContent = window.moment(d.daily[3].dt*1000).format('ddd');
+        d4.textContent = window.moment(d.daily[4].dt*1000).format('ddd');
+        d5.textContent = window.moment(d.daily[5].dt*1000).format('ddd');
+        d6.textContent = window.moment(d.daily[6].dt*1000).format('ddd');
+
+        document.querySelector(".i1").src="https://openweathermap.org/img/wn/"+d.daily[1].weather[0].icon+".png";
+        document.querySelector(".i2").src="https://openweathermap.org/img/wn/"+d.daily[2].weather[0].icon+".png";
+        document.querySelector(".i3").src="https://openweathermap.org/img/wn/"+d.daily[3].weather[0].icon+".png";
+        document.querySelector(".i4").src="https://openweathermap.org/img/wn/"+d.daily[4].weather[0].icon+".png";
+        document.querySelector(".i5").src="https://openweathermap.org/img/wn/"+d.daily[5].weather[0].icon+".png";
+        document.querySelector(".i6").src="https://openweathermap.org/img/wn/"+d.daily[6].weather[0].icon+".png";
+
+        tem1.textContent = "Temp:\n"+d.daily[1].temp.day+"";
+        tem2.textContent = "Temp:\n"+d.daily[2].temp.day+"";
+        tem3.textContent = "Temp:\n"+d.daily[3].temp.day+"";
+        tem4.textContent = "Temp:\n"+d.daily[4].temp.day+"";
+        tem5.textContent = "Temp:\n"+d.daily[5].temp.day+"";
+        tem6.textContent = "Temp:\n"+d.daily[6].temp.day+"";
+                                      
     }
     catch(error)
     {
@@ -194,7 +238,6 @@ window.addEventListener("load" ,()=>
                     rise.textContent = "Sun-rise : "+window.moment(data.sys.sunrise*1000).format('hh:mm a');
                     set.textContent = "Sun-set : "+ window.moment(data.sys.sunset*1000).format('hh:mm a');
                     
-
                     if(id<300 && id>200)
                     {
                         if(hour >= 4 && hour <= 20)
@@ -291,7 +334,43 @@ window.addEventListener("load" ,()=>
                     }
 
                     console.log(data);
-                })
+
+                    let lati = position.coords.latitude;
+                    let longi = position.coords.longitude;
+
+                    const key =`https://api.openweathermap.org/data/2.5/onecall?lat=${lati}&lon=${longi}&exclude=,hourly,minutely&units=metric&appid=ba98deab6ce9cd74af9735fb0625c520`
+
+                    fetch(key).then((response)=>
+                    {
+                        return response.json();
+                    })
+                    .then(dd =>
+                        {
+                            d1.textContent = window.moment(dd.daily[1].dt*1000).format('ddd');
+                            d2.textContent = window.moment(dd.daily[2].dt*1000).format('ddd');
+                            d3.textContent = window.moment(dd.daily[3].dt*1000).format('ddd');
+                            d4.textContent = window.moment(dd.daily[4].dt*1000).format('ddd');
+                            d5.textContent = window.moment(dd.daily[5].dt*1000).format('ddd');
+                            d6.textContent = window.moment(dd.daily[6].dt*1000).format('ddd');
+
+                            document.querySelector(".i1").src="https://openweathermap.org/img/wn/"+dd.daily[1].weather[0].icon+".png";
+                            document.querySelector(".i2").src="https://openweathermap.org/img/wn/"+dd.daily[2].weather[0].icon+".png";
+                            document.querySelector(".i3").src="https://openweathermap.org/img/wn/"+dd.daily[3].weather[0].icon+".png";
+                            document.querySelector(".i4").src="https://openweathermap.org/img/wn/"+dd.daily[4].weather[0].icon+".png";
+                            document.querySelector(".i5").src="https://openweathermap.org/img/wn/"+dd.daily[5].weather[0].icon+".png";
+                            document.querySelector(".i6").src="https://openweathermap.org/img/wn/"+dd.daily[6].weather[0].icon+".png";
+
+                            tem1.textContent = "Temp:\n"+dd.daily[1].temp.day+"";
+                            tem2.textContent = "Temp:\n"+dd.daily[2].temp.day+"";
+                            tem3.textContent = "Temp:\n"+dd.daily[3].temp.day+"";
+                            tem4.textContent = "Temp:\n"+dd.daily[4].temp.day+"";
+                            tem5.textContent = "Temp:\n"+dd.daily[5].temp.day+"";
+                            tem6.textContent = "Temp:\n"+dd.daily[6].temp.day+"";
+
+                            console.log(dd);
+                            
+                        })
+                })             
         })
     }
 })
