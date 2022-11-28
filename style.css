@@ -40,7 +40,7 @@ body {
 .weather_detail {
     padding: 27px;
     /*background: rgb(0 200 255 / 80%);*/
-    background: url(../Weather_Forcasting-3.0/icons/moon.png);
+    background: url(../icons/moon.png);
     background-size: cover;
     background-position: right;
     overflow: hidden;
