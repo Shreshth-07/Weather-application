@@ -1,143 +1,125 @@
-*{
-    margin: 10px;
+@import url("https://fonts.googleapis.com/css2?family=Baloo2&family=Roboto:wght@300&display=swap");
+
+* {
+    margin: 0;
     padding: 0;
-    box-sizing: content-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    box-sizing: border-box;
+    font-family: "Baloo 2", cursive;
 }
 
-body{
-    margin-top: center;
-    /*background-color: #263859;*/
-    background-image: url('https://source.unsplash.com/1600x900/?landscape');
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    margin: 9rem;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
-#search-form
-{
+.weather_card {
+    border: 2px solid;
+    width: 900px;
+    height: 550px;
     display: flex;
-    justify-self: center;
     align-items: center;
-    margin-top: 10px;
-    text-align: center;
-    align-items: center;
-}
-
-#temp
-{
-    text-align: center;
-}
-
-#temp #temp-unit
-{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-    font-size: 1.7rem;
-    color: #fff;
-}
-#temp #temp-value
-{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-    font-size: 1.7rem;
-    color: #fff;
-}
-
-#climate
-{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-    font-size: 1.5rem;
-    color: #fff;
-    text-align: center;
-} 
-
-#location
-{
-    text-align: center;
-}
-
-#location #state
-{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-    font-size: 1.7rem;
-    color: #fff;
-    text-align: center;
-}
-#location #coun
-{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-    font-size: 1.8rem;
-    color: #fff;
-    text-align: center;
-}
-
-#temp-icon
-{
-    margin: 1px;
-    width: 20%;
-    height: 20%;
-}
-
-main
-{
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    align-items: center;
-    background-color: #000000d0;
-    border-radius: 10px;
-    width: 400px;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#date
-{
-    text-align: center;
-    margin-top: 2px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-    color: #fff;
-    text-align: center;
-    font-size: 1.0rem;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-#search-button
-{
+    justify-content: center;
+    background-color: black;
     color: white;
-    height: 0.9rem;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: teal;
-    border-radius: 5px;
-    margin-left: 5px;
-    padding: 11px;
-    border: black;
-    display: inline-block;
-    transition: all 0.3s ease 0s;
+    border-radius: 35px;
 }
 
-#search-button:hover
-{
-    color: #ffffff;
-    background: #ff6768;
-    border-color: white;
-    transition: all 0.3s ease 0s;
+.column-1 {
+    height: 100%;
+    width: 45%;
+    /*background: url(../Weather_Forcasting-2/icons/moon.png);*/
+    background: rgb(31, 30, 30);
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 35px;
 }
 
-#search-input
+.weather_detail {
+    padding: 27px;
+    /*background: rgb(0 200 255 / 80%);*/
+    background: url(../Weather_Forcasting-3.0/icons/moon.png);
+    background-size: cover;
+    background-position: right;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.day {
+    font-size: 40px;
+    color: black;
+}
+
+.date {
+    font-size: 18px;
+    color: black;
+}
+
+.location {
+    font-size: 18px;
+    color: black;
+}
+
+.state
 {
-    width: 15rem;
-    height: 0.9rem;
+    font-size: 18px;
+    color: black;
+}
+
+.coun
+{
+    font-size: 18px;
+    color: black;
+}
+
+.temperature {
+    position: relative;
+}
+
+.temperature img {
+    margin: 10px;
+    width: 65%;
+    height: 65%;
+}
+
+.temperature h1 {
+    font-size: 67px;
+    color: black;
+}
+
+.temperature span {
+    position: absolute;
+    font-size: 30px;
+    bottom: -18px;
+    font-weight: bold;
+    color: black;
+}
+.temperature p
+{
+    position: absolute;
+    font-size: 35px;
+    bottom: -18px;
+    font-weight: bold;
+    color: black;
+}
+
+.column-2 {
+    padding: 35px;
+    width: 60%;
+    height: 100%;
+    /*background-color: rgba(56, 52, 52, 0.757);*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 35px;
+}
+
+.column-2 input {
+    width: 18rem;
+    height: 2.5rem;
     overflow: hidden;
     font-size: 20px;
     margin: 8px;
@@ -147,106 +129,81 @@ main
     outline: none;
     background: none;
     margin-left: 30px;
-    
-}
-input
-{
-   border: none;  
 }
 
-#humi
-{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-    font-size: 1rem;
-    color: #fff;
-    text-align: left;
+input {
+    border: none;
 }
 
-#wind
-{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-    font-size: 1rem;
-    color: #fff;
-    text-align: left;
-}
-#sunrise
-{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-    font-size: 1rem;
-    color: #fff;
-    text-align: left;
-}
-
-#sunset
-{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-    font-size: 1rem;
-    color: #fff;
-    text-align: left;
+.column-2 button {
+    color: white;
+    width: 5rem;
+    height: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: teal;
+    border-radius: 5px;
+    margin-left: 1px;
+    padding: 11px;
+    border: black;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
 }
 
-#days{
-    width: 90%;
-    height: 135px;
+.column-2 button:focus {
+    background-color: white;
+    color: black;
+}
+
+.column-2 h4 {
     display: flex;
-    margin-top: 5px;
-    margin-left: 20px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+}
+
+.forecast {
+    background: rgb(43 43 43 / 50%);
+    display: flex;
+    align-items: center;
     justify-content: center;
+    height: 150px;
+    width: 470px;
+    margin: 10px;
+    border-radius: 25px;
+}
+
+.forecast button {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    background-color: rgb(53, 46, 46);
-}
-#days>div{
-   width: 12%;
-   height: 90%;
-   text-align: center;
-   margin-right: 3px;
-   border: .5px solid rgb(97, 94, 94);
-   background-color: rgb(65, 64, 64);
-   border-radius: 5px;
-   align-items: center;
-}
-#days div i{
-   margin-top: 10px;
-   font-size: 28px;
-   margin-bottom: 5px;
-   color: orange;
-   align-items: center;
-} 
-
-#icon
-{
-   width: 20px;
-   height: 20px;
-   align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    outline: none;
 }
 
-#days div p{
-  margin-top: 5px;
-  color: rgb(255, 255, 255);
-  font-size: 15px;
-  font-weight: 700;
-  align-items: center;
+.forecast button:focus {
+    background-color: white;
+    color: black;
 }
-#days div img{
-  margin-top: -10px;
-  width: 20px;
-  height: 20px;
-  align-items: center;
-}
-#days div{
+
+.forecast button span {
     font-size: 13px;
-    color: rgb(255, 255, 255);
-    align-items: center;
-}
-#days div i{
-  color: yellow;
-  font-size: 25px;
-  align-items: center;  
 }
 
-.i1
+.forecast button h1 {
+    font-size: 18px;
+}
+
+.forecast button img
 {
-    align-items: center;
-    width: auto;
-    height: auto;
+    width: 50%;
+    height: 25%;
 }

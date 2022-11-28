@@ -1,134 +1,139 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <title>Weather App</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel ="stylesheet" href ="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    </head>
-    <body>
 
-        <style>
-            h1{text-align: center;}
-        </style>
-        <main id="app-container">
-            <h1 style="color: #ffffff;"><u>WEATHER REPORT</u></h1>
-            <!--<div id="btns">
-                <button id="night" onclick="nightFun()">Night</button>
-                <button id="day" onclick="dayFun()">Day</button>
-         </div>-->
-            <form id="search-form">
-                <input type="search" placeholder="Enter City Name"
-                id="search-input"
-                required
-                autocomplete="off"/>
+<head>
+    <title>Weather App</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <div class="weather_card">
+        <div class="column-1">
+            <div class="weather_detail">
+                <h3 class="day" id="day">---</h3>
                 <br>
+                <h4 class="date" id="date">--- | --:--</h4>
+                <br>
+                <p class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="state" id="state">-----</span> , <span class="coun" id="coun">------</span>
+                </p>
+                <div class="temperature">
+                    <img id="temp-icon" src="./icons/moon.png" alt="">
+                    <h1 id="temp-value">---°C</h1>
+                    <br>
+                    <span id="climate">----</span>
+                </div>
+            </div>
+        </div>
+        <div class="column-2">
+            <form id="search-form">
+                <input type="search" placeholder="Enter City Name" id="search-input" required autocomplete="on" />
                 <button id="search-button">Search</button>
             </form>
-            <div id="location">
-                <p><span id="state">-------</span><span id="coun">---</span></p>
+            <h4 id="humi">Humidity <span>0%</span></h4>
+            <h4 id="wind">Wind Speed <span>0km</span></h4>
+            <h4 id="air">Air Quality <span>---</span></h4>
+            <h4 id="sunrise">Sun Rise <span>00:00:00</span></h4>
+            <h4 id="sunset">Sun Set <span>00:00:00</span></h4>
+            <div class="forecast">
+                <button>
+                    <img src="./icons/sun.png" alt="" id="i1" />
+                    <span id="d1">----</span>
+                    <span id="a1">AQ ----</span>
+                    <h1 id="tem1">----</h1>
+                </button>
+                <button>
+                    <img src="./icons/moon.png" alt="" id="i2" />
+                    <span id="d2">---</span>
+                    <span id="a2">AQ ----</span>
+                    <h1  id="tem2">----</h1>
+                </button>
+                <button>
+                    <img src="./icons/haze.png" alt="" id="i3" />
+                    <span id="d3">---</span>
+                    <span id="a3">AQ ----</span>
+                    <h1 id="tem3">----</h1>
+                </button>
+                <button>
+                    <img src="./icons/storm.png" alt="" id="i4" />
+                    <span id="d4">---</span>
+                    <span id="a4">AQ ----</span>
+                    <h1 id="tem4">----</h1>
+                </button>
+                <button>
+                    <img src="./icons/night-fog.png" alt="" id="i5" />
+                    <span id="d5">---</span>
+                    <span id="a5">AQ ----</span>
+                    <h1 id="tem5">----</h1>
+                </button>
+                <button>
+                    <img src="./icons/rain.png" alt="" id="i6" />
+                    <span id="d6">---</span>
+                    <span id="a6">AQ ----</span>
+                    <h1 id="tem6">----</h1>
+                </button>
             </div>
-            <div id="temp">
-                <img id="temp-icon" src="./icons/sun.png" alt="">
-                <p><span id="temp-value">------</span>
-                <span id="temp-unit">°C</span></p>
-            </div>
-            <div id="climate">
-                <p>-----------</p>
-            </div>
-            <div id="date"> SAT | OCT | 12:20</div>
-            <hr>
-            <div id="humi">Humidity: ------</div>
-            <div id="wind">Wind speed: ------</div>
-            <div id="sunrise">Sun-Rise: ------</div>
-            <div id="sunset">Sun-Set: ------</div>
-  
-            <hr>
-            <div id="days">
-                <div>
-                      <p id="d1">---</p>
-                      <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="i1" />
-                      <div id="tem1">Temp: ---&#176;C</div> 
-                    </div>
-                    <div>
-                      <p id="d2">---</p>
-                      <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="i2" />
-                      <div id="tem2">Temp: ---&#176;C</div>   
-                    </div>
-                    <div>
-                      <p id="d3">---</p>
-                      <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="i3" />
-                      <div id="tem3">Temp: ---&#176;C</div>   
-                    </div>
-                    <div>
-                      <p id="d4">---</p>
-                      <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="i4" />
-                      <div id="tem4">Temp: ---&#176;C</div>   
-                    </div>
-                    <div>
-                      <p id="d5">---</p>
-                      <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="i5" />
-                      <div id="tem5">Temp: ---&#176;C</div>   
-                    </div>
-                    <div>
-                      <p id="d6">---</p>
-                      <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="i6" />
-                      <div id="tem6">Temp: ---&#176;C</div>  
-                    </div>
-                    
-              </div>
-        </main>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="script.js">
-        </script>
-        <script>
-            const curDate = document.getElementById("date");
-             const getCurrentDay = () =>{
-                var weekday = new Array(7);
-                weekday[0]="SUN";
-                weekday[1]="MON";
-                weekday[2]="TUE";
-                weekday[3]="WED";
-                weekday[4]="THU";
-                weekday[5]="FRI";
-                weekday[6]="SAT";
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js">
+    </script>
+    <script>
+        const curDate = document.getElementById("date");
+        const curDay = document.getElementById("day");
+        const getCurrentDay = () => {
+          var weekday = new Array(7);
+          weekday[0] = "SUN";
+          weekday[1] = "MON";
+          weekday[2] = "TUE";
+          weekday[3] = "WED";
+          weekday[4] = "THU";
+          weekday[5] = "FRI";
+          weekday[6] = "SAT";
+    
+          let currentTime = new Date();
+          let day = weekday[currentTime.getDay()];
+    
+          return day;
+        };
+    
+        const getCurrentTime = () => {
+    
+          var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC",];
+    
+          var now = new Date();
+          var month = months[now.getMonth()];
+          var date = now.getDate();
+    
+          let hours = now.getHours();
+          let mins = now.getMinutes();
+    
+          let periods = "AM";
+          if (hours > 11) {
+            periods = "PM";
+            if (hours > 12) hours -= 12;
+          }
+          if (mins < 10) {
+            mins = "0" + mins;
+          }
+    
+          return `${month} ${date} | ${hours}:${mins} ${periods}`;
+        };
+    
+        curDay.innerHTML =getCurrentDay();
+        curDate.innerHTML = getCurrentTime();
+      </script>
+</body>
 
-                let currentTime = new Date();
-                let day =weekday[currentTime.getDay()];
-
-                return day;
-             };
-
-            const getCurrentTime = () =>{
-
-             var months =["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC",]; 
-
-             var now = new Date();
-             var month = months[now.getMonth()];
-             var date = now.getDate();
-
-             let hours =now.getHours();
-             let mins = now.getMinutes();
-
-             let periods = "AM";
-             if(hours > 11)
-             {
-                periods="PM";
-                if(hours > 12) hours-=12;
-             }
-             if(mins < 10)
-             {
-                mins = "0"+mins;
-             }
-
-             return `${month} ${date} | ${hours}:${mins} ${periods}`;
-             };
-
-
-            curDate.innerHTML =getCurrentDay()+ " | " +getCurrentTime();
-        </script>
-    </body>
 </html>
