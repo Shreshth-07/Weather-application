@@ -444,8 +444,8 @@ window.addEventListener("load", () => {
 
                     const qua = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lati}&lon=${longi}&appid=ba98deab6ce9cd74af9735fb0625c520`
 
-                    fetch(qua).then((response) => {
-                        return response.json();
+                    fetch(qua).then((res) => {
+                        return res.json();
                     })
                         .then(d => {
 
@@ -697,8 +697,8 @@ window.addEventListener("load", () => {
 
                     const aq = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=${lati}&lon=${longi}&appid=ba98deab6ce9cd74af9735fb0625c520`
 
-                    fetch(aq).then((response) => {
-                        return response.json();
+                    fetch(aq).then((resp) => {
+                        return resp.json();
                     })
                         .then(af =>
                         {
